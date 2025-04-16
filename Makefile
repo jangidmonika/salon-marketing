@@ -1,4 +1,4 @@
-.PHONY: install build clean watch serve help init
+.PHONY: install build clean watch serve help init deploy
 
 help:
 	@echo "Available commands:"
@@ -8,6 +8,7 @@ help:
 	@echo "  make clean      - Clean build files"
 	@echo "  make watch      - Watch for changes and rebuild automatically"
 	@echo "  make serve      - Serve the documentation locally"
+	@echo "  make deploy     - Deploy to GitHub Pages (requires git setup)"
 	@echo "  make help       - Show this help message"
 
 install:
@@ -35,4 +36,14 @@ watch:
 
 serve:
 	@echo "Serving documentation at http://localhost:8000"
-	cd _build/html && python -m http.server 8000 
+	cd _build/html && python -m http.server 8000
+
+deploy:
+	@echo "Deploying to GitHub Pages..."
+	git checkout -b gh-pages
+	git add -f _build/html
+	git commit -m "Deploy to GitHub Pages"
+	git push origin gh-pages --force
+	git checkout main
+	git branch -D gh-pages
+	@echo "Deployment complete! Visit https://jangidmonika.github.io/salon-marketing/" 
