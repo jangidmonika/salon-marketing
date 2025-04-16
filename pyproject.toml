@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "salon-marketing-docs"
+version = "0.1.0"
+description = "Documentation for salon marketing research and strategies"
+authors = ["Monika Jangid <your.email@example.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+sphinx = "^7.2.6"
+myst-parser = "^2.0.0"
+sphinx-rtd-theme = "^2.0.0"
+watchdog = "^3.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+watch = "watch:main" 
