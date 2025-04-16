@@ -11,6 +11,8 @@ A documentation website for salon marketing research and strategies, built with 
 - Poetry for dependency management
 - GitHub Pages hosting
 
+
+
 ## Setup
 
 1. Install Poetry if you haven't already:
